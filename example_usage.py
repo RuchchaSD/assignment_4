@@ -1,3 +1,4 @@
+# example_usage.py
 """
 End-to-end comprehensive test for the AttackDetector / AttackRules stack.
 Tests all rules + parallel threading with multiple devices.
@@ -67,28 +68,13 @@ def send_parallel(events):
         t.join()
 
 def wait_for_processing():
-    """Wait for all device queues to be empty (all events processed)"""
-    import time
-    max_wait = 5.0  # Maximum wait time in seconds
-    start_time = time.time()
-    
-    while time.time() - start_time < max_wait:
-        # Check if all queues are empty
-        all_empty = True
-        for queue in detector._device_queues.values():
-            if not queue.empty():
-                all_empty = False
-                break
-        
-        if all_empty:
-            # Give a bit more time for final processing
-            time.sleep(0.1)
-            return True
-            
-        time.sleep(0.05)  # Short sleep before checking again
-    
-    # Timeout reached
-    return False
+    """Wait for all device queues to finish processing events"""
+    try:
+        for device_queue in detector._device_queues.values():
+            device_queue.join()
+        return True
+    except Exception:
+        return False
 
 def expect_with_sync(case, should_alert):
     """Expect function that waits for all processing to complete"""
