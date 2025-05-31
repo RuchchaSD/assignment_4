@@ -1,12 +1,13 @@
-from .instrumentation import AttackDetector, instrument, get_detector
+from .instrumentation import detector, instrument
 from .rules import AttackRules, Verdict
-from .log_writer import LogWriter
+from .attack_detector import AttackDetector
+from .event import Event
 
 __all__ = [
     'AttackDetector',
     'instrument', 
-    'get_detector',
+    'detector',
     'AttackRules',
     'Verdict',
-    'LogWriter'
+    'Event'
 ] 
