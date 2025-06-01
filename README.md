@@ -108,7 +108,7 @@ This comprehensive test validates all detection rules with 20 test cases coverin
 - **Cross-device Monitoring**: System-wide resource tracking
 
 ### 7. Message Flood Protection
-- **MQTT Floods**: 10,000+ messages in 100 seconds
+- **MQTT Floods**: 20,000+ messages in 100 seconds
 - **Protocol Agnostic**: Adaptable to various message protocols
 
 ## 📊 Logging Strategy
@@ -219,22 +219,4 @@ attack-detector/
 - **Monitoring**: Health checks via queue size and flag status
 - **Alerting**: Hook into `suspicious_flag` for real-time notifications
 
-## 📈 Future Enhancements
-
-- **Machine Learning**: Behavioral analysis and anomaly detection
-- **Geographic Intelligence**: Impossible travel detection
-- **Protocol Analysis**: Deep packet inspection capabilities
-- **Real-time Dashboard**: Web interface for monitoring and configuration
-- **Alert Correlation**: Cross-event pattern recognition
-
-## 🤝 Contributing
-
-This project maintains high code quality standards:
-- **Type Hints**: Full type annotation coverage
-- **Documentation**: Comprehensive docstrings and comments
-- **Testing**: 100% detection rule coverage
-- **Performance**: Optimized for production environments
-
----
-
-**Security Notice**: This system is designed for legitimate security monitoring. Ensure compliance with applicable privacy laws and organizational policies when deploying in production environments. 
+**Security Notice**: This system is designed for educational purposes as part of EN4720 Security in Cyber-Physical Systems (Assignment 4). It provides no security guarantees and should not be used in production environments without extensive testing and hardening.
