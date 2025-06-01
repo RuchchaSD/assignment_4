@@ -59,7 +59,7 @@ class LogWriter:
             filemode='a'  # Append mode
         )
         
-    def write(self, verdict) -> None:
+    def write(self, verdict, event=None) -> None:
         """
         Write verdict to appropriate logs based on severity.
         
@@ -70,6 +70,7 @@ class LogWriter:
         
         Args:
             verdict: Verdict object containing detection results
+            event: Original Event object for context (optional)
         """
         # Create structured record for JSON logging
         record: Dict[str, Any] = {
@@ -81,14 +82,24 @@ class LogWriter:
         
         # Log all events to run.log with appropriate levels
         if verdict.suspicious:
-            # Critical security alerts
-            logging.warning(f"ALERT {verdict.rule_hit}: {verdict.detail}")
+            # Critical security alerts - make them very visible
+            logging.warning(f"[SECURITY ALERT] {verdict.rule_hit}: {verdict.detail}")
         elif verdict.rule_hit:
             # Notable events (unknown users, validation issues, etc.)
-            logging.info(f"INFO {verdict.rule_hit}: {verdict.detail}")
+            logging.info(f"[NOTICE] {verdict.rule_hit}: {verdict.detail}")
         else:
-            # Normal operational events
-            logging.debug(f"NORMAL: {verdict.detail}")
+            # Normal operational events - include event details
+            if event:
+                event_summary = {
+                    "event": event.event_name,
+                    "user": event.user_id,
+                    "role": event.user_role,
+                    "device": event.source_id,
+                    "context": event.context
+                }
+                logging.debug(f"[NORMAL] {event_summary}")
+            else:
+                logging.debug(f"[NORMAL] {verdict.detail}")
         
         # Only write suspicious events to JSON log for analysis
         if verdict.suspicious:
@@ -96,7 +107,7 @@ class LogWriter:
                 with open(self.path, "a", encoding="utf-8") as f:
                     f.write(json.dumps(record) + "\n")  # NDJSON format
             except IOError as e:
-                logging.error(f"Failed to write attack log: {e}")
+                logging.error(f"[ERROR] Failed to write attack log: {e}")
                 
     def get_stats(self) -> Dict[str, int]:
         """

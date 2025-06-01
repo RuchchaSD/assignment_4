@@ -155,8 +155,8 @@ class AttackDetector:
                 # Process event through rules engine
                 verdict = rules.evaluate(event)
                 
-                # Log the result
-                self._log_writer.write(verdict)
+                # Log the result with event context
+                self._log_writer.write(verdict, event)
                 
                 # Mark task as done
                 device_queue.task_done()
