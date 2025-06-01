@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#tests/test_example_usage.py
 """
 Comprehensive test suite for the AttackDetector / AttackRules stack.
 Tests all rules + parallel threading with multiple devices.

@@ -48,7 +48,7 @@ htmlcov/
 
 # Logs
 logs/
-*.log
+# *.log
 log/
 
 # OS
@@ -63,3 +63,6 @@ Thumbs.db
 # Project specific
 # attack_detection.log
 # run.log
+
+!logs/attack_detection.log
+!logs/run.log   

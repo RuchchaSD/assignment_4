@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#examples/device_client_example.py
 """
 Example IoT device client for the Attack Detection API.
 
