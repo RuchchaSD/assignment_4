@@ -1,0 +1,80 @@
+{"timestamp": "2025-06-01T12:57:33.365979", "rule": "NON_LAN_ACCESS", "alert": true, "ip": "11.22.33.44"}
+{"timestamp": "2025-06-01T12:57:33.786723", "rule": "INVALID_IP_FORMAT", "alert": true, "ip": "invalid-ip"}
+{"timestamp": "2025-06-01T12:57:35.901499", "rule": "BRUTE_FORCE_LOGIN", "alert": true, "user": "eve", "attempts": 6}
+{"timestamp": "2025-06-01T12:57:36.321927", "rule": "COMMAND_INJECTION", "alert": true, "command": "shutdown", "user": "eve", "count": 4}
+{"timestamp": "2025-06-01T12:57:39.168817", "rule": "POWER_ANOMALY", "alert": true, "device": "hvac", "current_value": 80.0, "baseline_mean": 30.0, "spike_ratio": 2.67, "samples": 6}
+{"timestamp": "2025-06-01T12:57:39.591436", "rule": "SYN_FLOOD", "alert": true, "user": "eve", "rate": 150, "source": "192.168.0.20"}
+{"timestamp": "2025-06-01T12:57:40.011890", "rule": "SYN_FLOOD", "alert": true, "user": "multiple", "rate": 200, "source": "192.168.0.40"}
+{"timestamp": "2025-06-01T12:57:40.573734", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "hvac", "duration_seconds": 90, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:57:40.573734", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "hvac", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:57:40.588808", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "hvac", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:57:40.589313", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "hvac", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:57:40.589313", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "hvac", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:57:40.590321", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "hvac", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:57:41.431700", "rule": "MESSAGE_FLOOD", "alert": true, "events_in_window": 2, "estimated_messages": 20000}
+{"timestamp": "2025-06-01T12:57:41.431700", "rule": "MESSAGE_FLOOD", "alert": true, "events_in_window": 3, "estimated_messages": 30000}
+{"timestamp": "2025-06-01T12:57:41.855488", "rule": "BRUTE_FORCE_LOGIN", "alert": true, "user": "eve", "attempts": 6}
+{"timestamp": "2025-06-01T12:57:43.360622", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "thermostat", "duration_seconds": 90, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:57:43.361621", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "thermostat", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:57:43.361621", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "thermostat", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:57:43.362623", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "thermostat", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:57:43.362623", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "thermostat", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:57:43.363622", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "thermostat", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:57:45.675599", "rule": "BRUTE_FORCE_LOGIN", "alert": true, "user": "attacker", "attempts": 6}
+{"timestamp": "2025-06-01T12:57:45.676598", "rule": "BRUTE_FORCE_LOGIN", "alert": true, "user": "attacker", "attempts": 7}
+{"timestamp": "2025-06-01T12:57:45.676598", "rule": "BRUTE_FORCE_LOGIN", "alert": true, "user": "attacker", "attempts": 8}
+{"timestamp": "2025-06-01T12:59:05.606423", "rule": "NON_LAN_ACCESS", "alert": true, "ip": "11.22.33.44"}
+{"timestamp": "2025-06-01T12:59:07.154375", "rule": "INVALID_IP_FORMAT", "alert": true, "ip": "invalid-ip"}
+{"timestamp": "2025-06-01T12:59:15.483100", "rule": "BRUTE_FORCE_LOGIN", "alert": true, "user": "eve", "attempts": 6}
+{"timestamp": "2025-06-01T12:59:17.528617", "rule": "COMMAND_INJECTION", "alert": true, "command": "shutdown", "user": "eve", "count": 4}
+{"timestamp": "2025-06-01T12:59:26.265117", "rule": "POWER_ANOMALY", "alert": true, "device": "hvac", "current_value": 80.0, "baseline_mean": 30.0, "spike_ratio": 2.67, "samples": 6}
+{"timestamp": "2025-06-01T12:59:27.812875", "rule": "SYN_FLOOD", "alert": true, "user": "eve", "rate": 150, "source": "192.168.0.20"}
+{"timestamp": "2025-06-01T12:59:29.359838", "rule": "SYN_FLOOD", "alert": true, "user": "multiple", "rate": 200, "source": "192.168.0.40"}
+{"timestamp": "2025-06-01T12:59:32.943866", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "hvac", "duration_seconds": 90, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:59:32.963482", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "hvac", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:59:32.983581", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "hvac", "duration_seconds": 92, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:59:33.002665", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "hvac", "duration_seconds": 93, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:59:33.020984", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "hvac", "duration_seconds": 94, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:59:33.044056", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "hvac", "duration_seconds": 95, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:59:36.131909", "rule": "MESSAGE_FLOOD", "alert": true, "events_in_window": 2, "estimated_messages": 20000}
+{"timestamp": "2025-06-01T12:59:36.152835", "rule": "MESSAGE_FLOOD", "alert": true, "events_in_window": 3, "estimated_messages": 30000}
+{"timestamp": "2025-06-01T12:59:37.769930", "rule": "BRUTE_FORCE_LOGIN", "alert": true, "user": "eve", "attempts": 7}
+{"timestamp": "2025-06-01T12:59:37.846667", "rule": "BRUTE_FORCE_LOGIN", "alert": true, "user": "eve", "attempts": 8}
+{"timestamp": "2025-06-01T12:59:37.923129", "rule": "BRUTE_FORCE_LOGIN", "alert": true, "user": "eve", "attempts": 9}
+{"timestamp": "2025-06-01T12:59:38.002891", "rule": "BRUTE_FORCE_LOGIN", "alert": true, "user": "eve", "attempts": 10}
+{"timestamp": "2025-06-01T12:59:38.081581", "rule": "BRUTE_FORCE_LOGIN", "alert": true, "user": "eve", "attempts": 11}
+{"timestamp": "2025-06-01T12:59:38.162450", "rule": "BRUTE_FORCE_LOGIN", "alert": true, "user": "eve", "attempts": 12}
+{"timestamp": "2025-06-01T12:59:41.963776", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "thermostat", "duration_seconds": 90, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:59:41.980627", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "thermostat", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:59:42.008286", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "thermostat", "duration_seconds": 92, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:59:42.023892", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "thermostat", "duration_seconds": 93, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:59:42.040163", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "thermostat", "duration_seconds": 94, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:59:42.055948", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "thermostat", "duration_seconds": 95, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T12:59:45.480956", "rule": "BRUTE_FORCE_LOGIN", "alert": true, "user": "attacker", "attempts": 6}
+{"timestamp": "2025-06-01T12:59:45.557829", "rule": "BRUTE_FORCE_LOGIN", "alert": true, "user": "attacker", "attempts": 7}
+{"timestamp": "2025-06-01T12:59:45.639654", "rule": "BRUTE_FORCE_LOGIN", "alert": true, "user": "attacker", "attempts": 8}
+{"timestamp": "2025-06-01T14:34:45.725549", "rule": "NON_LAN_ACCESS", "alert": true, "ip": "11.22.33.44"}
+{"timestamp": "2025-06-01T14:34:46.126584", "rule": "INVALID_IP_FORMAT", "alert": true, "ip": "invalid-ip"}
+{"timestamp": "2025-06-01T14:34:48.134445", "rule": "BRUTE_FORCE_LOGIN", "alert": true, "user": "eve", "attempts": 6}
+{"timestamp": "2025-06-01T14:34:48.536365", "rule": "COMMAND_INJECTION", "alert": true, "command": "shutdown", "user": "eve", "count": 4}
+{"timestamp": "2025-06-01T14:34:51.244766", "rule": "POWER_ANOMALY", "alert": true, "device": "hvac", "current_value": 80.0, "baseline_mean": 30.0, "spike_ratio": 2.67, "samples": 6}
+{"timestamp": "2025-06-01T14:34:51.647405", "rule": "SYN_FLOOD", "alert": true, "user": "eve", "rate": 150, "source": "192.168.0.20"}
+{"timestamp": "2025-06-01T14:34:52.049121", "rule": "SYN_FLOOD", "alert": true, "user": "multiple", "rate": 200, "source": "192.168.0.40"}
+{"timestamp": "2025-06-01T14:34:52.547384", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "hvac", "duration_seconds": 90, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T14:34:52.547384", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "hvac", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T14:34:52.555414", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "hvac", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T14:34:52.555414", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "hvac", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T14:34:52.556420", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "hvac", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T14:34:52.556420", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "hvac", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T14:34:53.358266", "rule": "MESSAGE_FLOOD", "alert": true, "events_in_window": 2, "estimated_messages": 20000}
+{"timestamp": "2025-06-01T14:34:53.358266", "rule": "MESSAGE_FLOOD", "alert": true, "events_in_window": 3, "estimated_messages": 30000}
+{"timestamp": "2025-06-01T14:34:53.762635", "rule": "BRUTE_FORCE_LOGIN", "alert": true, "user": "eve", "attempts": 6}
+{"timestamp": "2025-06-01T14:34:55.211308", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "thermostat", "duration_seconds": 90, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T14:34:55.213307", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "thermostat", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T14:34:55.214306", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "thermostat", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T14:34:55.216305", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "thermostat", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T14:34:55.216305", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "thermostat", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T14:34:55.217306", "rule": "RESOURCE_EXHAUSTION", "alert": true, "device": "thermostat", "duration_seconds": 91, "avg_usage": 0.85}
+{"timestamp": "2025-06-01T14:34:57.520908", "rule": "BRUTE_FORCE_LOGIN", "alert": true, "user": "attacker", "attempts": 6}
+{"timestamp": "2025-06-01T14:34:57.520908", "rule": "BRUTE_FORCE_LOGIN", "alert": true, "user": "attacker", "attempts": 7}
+{"timestamp": "2025-06-01T14:34:57.521917", "rule": "BRUTE_FORCE_LOGIN", "alert": true, "user": "attacker", "attempts": 8}

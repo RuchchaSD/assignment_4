@@ -1,0 +1,487 @@
+2025-06-01 18:29:04,045 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.10', 'context': {'success': True}}
+2025-06-01 18:29:04,067 DEBUG [NORMAL] {'event': 'control_command', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.10', 'context': {'command': 'light_on'}}
+2025-06-01 18:29:05,606 WARNING [SECURITY ALERT] NON_LAN_ACCESS: {'ip': '11.22.33.44'}
+2025-06-01 18:29:07,154 WARNING [SECURITY ALERT] INVALID_IP_FORMAT: {'ip': 'invalid-ip'}
+2025-06-01 18:29:08,695 INFO [NOTICE] UNKNOWN_DEVICE: {'ip': '192.168.99.99'}
+2025-06-01 18:29:10,236 INFO [NOTICE] UNKNOWN_USER: {'user': 'unknown_user'}
+2025-06-01 18:29:11,778 INFO [NOTICE] INVALID_ROLE: {'role': 'INVALID_ROLE'}
+2025-06-01 18:29:13,320 INFO [NOTICE] PRIVILEGE_ESCALATION: {'user': 'manager', 'claimed_role': 'USER'}
+2025-06-01 18:29:14,860 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'success': False}}
+2025-06-01 18:29:14,980 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'success': False}}
+2025-06-01 18:29:15,107 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'success': False}}
+2025-06-01 18:29:15,230 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'success': False}}
+2025-06-01 18:29:15,357 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'success': False}}
+2025-06-01 18:29:15,483 WARNING [SECURITY ALERT] BRUTE_FORCE_LOGIN: {'user': 'eve', 'attempts': 6}
+2025-06-01 18:29:17,148 DEBUG [NORMAL] {'event': 'control_command', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'command': 'shutdown'}}
+2025-06-01 18:29:17,281 DEBUG [NORMAL] {'event': 'control_command', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'command': 'shutdown'}}
+2025-06-01 18:29:17,403 DEBUG [NORMAL] {'event': 'control_command', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'command': 'shutdown'}}
+2025-06-01 18:29:17,528 WARNING [SECURITY ALERT] COMMAND_INJECTION: {'command': 'shutdown', 'user': 'eve', 'count': 4}
+2025-06-01 18:29:19,182 DEBUG [NORMAL] {'event': 'control_command', 'user': 'admin', 'role': 'ADMIN', 'device': '192.168.0.20', 'context': {'command': 'factory_reset'}}
+2025-06-01 18:29:19,307 DEBUG [NORMAL] {'event': 'control_command', 'user': 'admin', 'role': 'ADMIN', 'device': '192.168.0.20', 'context': {'command': 'factory_reset'}}
+2025-06-01 18:29:19,430 DEBUG [NORMAL] {'event': 'control_command', 'user': 'admin', 'role': 'ADMIN', 'device': '192.168.0.20', 'context': {'command': 'factory_reset'}}
+2025-06-01 18:29:19,555 DEBUG [NORMAL] {'event': 'control_command', 'user': 'admin', 'role': 'ADMIN', 'device': '192.168.0.20', 'context': {'command': 'factory_reset'}}
+2025-06-01 18:29:19,679 DEBUG [NORMAL] {'event': 'control_command', 'user': 'admin', 'role': 'ADMIN', 'device': '192.168.0.20', 'context': {'command': 'factory_reset'}}
+2025-06-01 18:29:21,332 INFO [NOTICE] POWER_OUT_OF_RANGE: {'value': -10.0}
+2025-06-01 18:29:22,873 INFO [NOTICE] POWER_OUT_OF_RANGE: {'value': 150.0}
+2025-06-01 18:29:24,415 DEBUG [NORMAL] {'event': 'power_consumption', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'percent': 30}}
+2025-06-01 18:29:24,539 DEBUG [NORMAL] {'event': 'power_consumption', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'percent': 30}}
+2025-06-01 18:29:24,662 DEBUG [NORMAL] {'event': 'power_consumption', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'percent': 30}}
+2025-06-01 18:29:24,787 DEBUG [NORMAL] {'event': 'power_consumption', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'percent': 30}}
+2025-06-01 18:29:24,913 DEBUG [NORMAL] {'event': 'power_consumption', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'percent': 30}}
+2025-06-01 18:29:25,036 DEBUG [NORMAL] {'event': 'power_consumption', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'percent': 30}}
+2025-06-01 18:29:26,265 WARNING [SECURITY ALERT] POWER_ANOMALY: {'device': 'hvac', 'current_value': 80.0, 'baseline_mean': 30.0, 'spike_ratio': 2.67, 'samples': 6}
+2025-06-01 18:29:27,812 WARNING [SECURITY ALERT] SYN_FLOOD: {'user': 'eve', 'rate': 150, 'source': '192.168.0.20'}
+2025-06-01 18:29:29,359 WARNING [SECURITY ALERT] SYN_FLOOD: {'user': 'multiple', 'rate': 200, 'source': '192.168.0.40'}
+2025-06-01 18:29:30,905 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:30,982 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,000 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,023 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,044 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,064 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,085 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,105 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,130 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,154 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,178 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,198 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,220 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,241 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,263 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,283 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,304 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,328 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,348 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,366 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,385 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,465 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,486 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,503 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,525 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,543 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,564 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,585 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,605 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,627 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,645 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,664 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,686 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,708 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,728 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,748 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,769 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,790 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,812 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,834 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,857 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,933 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,954 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,976 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:31,997 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,018 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,037 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,055 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,080 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,098 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,120 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,143 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,164 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,182 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,205 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,227 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,246 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,264 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,281 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,297 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,314 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,383 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,399 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,414 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,431 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,446 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,464 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,480 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,498 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,515 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,536 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,555 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,571 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,589 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,604 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,620 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,640 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,654 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,671 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,689 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,705 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,776 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,798 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,818 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,839 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,858 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,880 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,901 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,922 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 18:29:32,943 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'hvac', 'duration_seconds': 90, 'avg_usage': 0.85}
+2025-06-01 18:29:32,963 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'hvac', 'duration_seconds': 91, 'avg_usage': 0.85}
+2025-06-01 18:29:32,983 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'hvac', 'duration_seconds': 92, 'avg_usage': 0.85}
+2025-06-01 18:29:33,002 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'hvac', 'duration_seconds': 93, 'avg_usage': 0.85}
+2025-06-01 18:29:33,020 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'hvac', 'duration_seconds': 94, 'avg_usage': 0.85}
+2025-06-01 18:29:33,044 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'hvac', 'duration_seconds': 95, 'avg_usage': 0.85}
+2025-06-01 18:29:34,584 DEBUG [NORMAL] {'event': '10000_messages_received', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.40', 'context': {}}
+2025-06-01 18:29:36,131 WARNING [SECURITY ALERT] MESSAGE_FLOOD: {'events_in_window': 2, 'estimated_messages': 20000}
+2025-06-01 18:29:36,152 WARNING [SECURITY ALERT] MESSAGE_FLOOD: {'events_in_window': 3, 'estimated_messages': 30000}
+2025-06-01 18:29:37,693 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.10', 'context': {'success': True}}
+2025-06-01 18:29:37,769 WARNING [SECURITY ALERT] BRUTE_FORCE_LOGIN: {'user': 'eve', 'attempts': 7}
+2025-06-01 18:29:37,846 WARNING [SECURITY ALERT] BRUTE_FORCE_LOGIN: {'user': 'eve', 'attempts': 8}
+2025-06-01 18:29:37,923 WARNING [SECURITY ALERT] BRUTE_FORCE_LOGIN: {'user': 'eve', 'attempts': 9}
+2025-06-01 18:29:38,002 WARNING [SECURITY ALERT] BRUTE_FORCE_LOGIN: {'user': 'eve', 'attempts': 10}
+2025-06-01 18:29:38,081 WARNING [SECURITY ALERT] BRUTE_FORCE_LOGIN: {'user': 'eve', 'attempts': 11}
+2025-06-01 18:29:38,162 WARNING [SECURITY ALERT] BRUTE_FORCE_LOGIN: {'user': 'eve', 'attempts': 12}
+2025-06-01 18:29:38,234 DEBUG [NORMAL] {'event': 'control_command', 'user': 'admin', 'role': 'ADMIN', 'device': '192.168.0.30', 'context': {'command': 'light_on'}}
+2025-06-01 18:29:40,342 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,372 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,389 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,406 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,426 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,446 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,462 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,479 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,499 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,515 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,532 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,559 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,573 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,591 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,607 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,623 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,641 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,656 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,675 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,692 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,766 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,766 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,766 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,781 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,796 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,812 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,828 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,844 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,858 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,874 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,891 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,933 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,950 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,965 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:40,983 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,001 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,020 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,039 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,057 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,074 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,090 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,122 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,139 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,156 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,171 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,189 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,205 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,221 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,238 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,254 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,270 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,306 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,322 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,339 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,355 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,371 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,386 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,403 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,419 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,434 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,450 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,483 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,498 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,514 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,530 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,546 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,562 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,575 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,592 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,609 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,625 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,667 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,683 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,700 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,716 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,730 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,744 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,759 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,774 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,789 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,807 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,837 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,853 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,869 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,886 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,901 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,917 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,933 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,949 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 18:29:41,964 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'thermostat', 'duration_seconds': 90, 'avg_usage': 0.85}
+2025-06-01 18:29:41,980 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'thermostat', 'duration_seconds': 91, 'avg_usage': 0.85}
+2025-06-01 18:29:42,008 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'thermostat', 'duration_seconds': 92, 'avg_usage': 0.85}
+2025-06-01 18:29:42,023 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'thermostat', 'duration_seconds': 93, 'avg_usage': 0.85}
+2025-06-01 18:29:42,040 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'thermostat', 'duration_seconds': 94, 'avg_usage': 0.85}
+2025-06-01 18:29:42,055 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'thermostat', 'duration_seconds': 95, 'avg_usage': 0.85}
+2025-06-01 18:29:45,095 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'attacker', 'role': 'USER', 'device': '192.168.0.40', 'context': {'success': False}}
+2025-06-01 18:29:45,171 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'attacker', 'role': 'USER', 'device': '192.168.0.40', 'context': {'success': False}}
+2025-06-01 18:29:45,249 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'attacker', 'role': 'USER', 'device': '192.168.0.40', 'context': {'success': False}}
+2025-06-01 18:29:45,325 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'attacker', 'role': 'USER', 'device': '192.168.0.40', 'context': {'success': False}}
+2025-06-01 18:29:45,402 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'attacker', 'role': 'USER', 'device': '192.168.0.40', 'context': {'success': False}}
+2025-06-01 18:29:45,480 WARNING [SECURITY ALERT] BRUTE_FORCE_LOGIN: {'user': 'attacker', 'attempts': 6}
+2025-06-01 18:29:45,557 WARNING [SECURITY ALERT] BRUTE_FORCE_LOGIN: {'user': 'attacker', 'attempts': 7}
+2025-06-01 18:29:45,639 WARNING [SECURITY ALERT] BRUTE_FORCE_LOGIN: {'user': 'attacker', 'attempts': 8}
+2025-06-01 20:02:58,365 DEBUG Using proactor: IocpProactor
+2025-06-01 20:04:45,324 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.10', 'context': {'success': True}}
+2025-06-01 20:04:45,324 DEBUG [NORMAL] {'event': 'control_command', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.10', 'context': {'command': 'light_on'}}
+2025-06-01 20:04:45,725 WARNING [SECURITY ALERT] NON_LAN_ACCESS: {'ip': '11.22.33.44'}
+2025-06-01 20:04:46,126 WARNING [SECURITY ALERT] INVALID_IP_FORMAT: {'ip': 'invalid-ip'}
+2025-06-01 20:04:46,528 INFO [NOTICE] UNKNOWN_DEVICE: {'ip': '192.168.99.99'}
+2025-06-01 20:04:46,929 INFO [NOTICE] UNKNOWN_USER: {'user': 'unknown_user'}
+2025-06-01 20:04:47,330 INFO [NOTICE] INVALID_ROLE: {'role': 'INVALID_ROLE'}
+2025-06-01 20:04:47,732 INFO [NOTICE] PRIVILEGE_ESCALATION: {'user': 'manager', 'claimed_role': 'USER'}
+2025-06-01 20:04:48,134 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'success': False}}
+2025-06-01 20:04:48,134 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'success': False}}
+2025-06-01 20:04:48,134 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'success': False}}
+2025-06-01 20:04:48,134 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'success': False}}
+2025-06-01 20:04:48,134 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'success': False}}
+2025-06-01 20:04:48,134 WARNING [SECURITY ALERT] BRUTE_FORCE_LOGIN: {'user': 'eve', 'attempts': 6}
+2025-06-01 20:04:48,536 DEBUG [NORMAL] {'event': 'control_command', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'command': 'shutdown'}}
+2025-06-01 20:04:48,536 DEBUG [NORMAL] {'event': 'control_command', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'command': 'shutdown'}}
+2025-06-01 20:04:48,536 DEBUG [NORMAL] {'event': 'control_command', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'command': 'shutdown'}}
+2025-06-01 20:04:48,536 WARNING [SECURITY ALERT] COMMAND_INJECTION: {'command': 'shutdown', 'user': 'eve', 'count': 4}
+2025-06-01 20:04:48,937 DEBUG [NORMAL] {'event': 'control_command', 'user': 'admin', 'role': 'ADMIN', 'device': '192.168.0.20', 'context': {'command': 'factory_reset'}}
+2025-06-01 20:04:48,937 DEBUG [NORMAL] {'event': 'control_command', 'user': 'admin', 'role': 'ADMIN', 'device': '192.168.0.20', 'context': {'command': 'factory_reset'}}
+2025-06-01 20:04:48,937 DEBUG [NORMAL] {'event': 'control_command', 'user': 'admin', 'role': 'ADMIN', 'device': '192.168.0.20', 'context': {'command': 'factory_reset'}}
+2025-06-01 20:04:48,937 DEBUG [NORMAL] {'event': 'control_command', 'user': 'admin', 'role': 'ADMIN', 'device': '192.168.0.20', 'context': {'command': 'factory_reset'}}
+2025-06-01 20:04:48,937 DEBUG [NORMAL] {'event': 'control_command', 'user': 'admin', 'role': 'ADMIN', 'device': '192.168.0.20', 'context': {'command': 'factory_reset'}}
+2025-06-01 20:04:49,339 INFO [NOTICE] POWER_OUT_OF_RANGE: {'value': -10.0}
+2025-06-01 20:04:49,740 INFO [NOTICE] POWER_OUT_OF_RANGE: {'value': 150.0}
+2025-06-01 20:04:50,141 DEBUG [NORMAL] {'event': 'power_consumption', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'percent': 30}}
+2025-06-01 20:04:50,241 DEBUG [NORMAL] {'event': 'power_consumption', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'percent': 30}}
+2025-06-01 20:04:50,341 DEBUG [NORMAL] {'event': 'power_consumption', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'percent': 30}}
+2025-06-01 20:04:50,442 DEBUG [NORMAL] {'event': 'power_consumption', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'percent': 30}}
+2025-06-01 20:04:50,543 DEBUG [NORMAL] {'event': 'power_consumption', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'percent': 30}}
+2025-06-01 20:04:50,643 DEBUG [NORMAL] {'event': 'power_consumption', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'percent': 30}}
+2025-06-01 20:04:51,244 WARNING [SECURITY ALERT] POWER_ANOMALY: {'device': 'hvac', 'current_value': 80.0, 'baseline_mean': 30.0, 'spike_ratio': 2.67, 'samples': 6}
+2025-06-01 20:04:51,647 WARNING [SECURITY ALERT] SYN_FLOOD: {'user': 'eve', 'rate': 150, 'source': '192.168.0.20'}
+2025-06-01 20:04:52,049 WARNING [SECURITY ALERT] SYN_FLOOD: {'user': 'multiple', 'rate': 200, 'source': '192.168.0.40'}
+2025-06-01 20:04:52,451 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,461 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,461 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,461 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,461 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,461 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,461 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,461 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,461 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,461 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,462 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,471 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,471 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,471 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,471 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,471 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,471 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,471 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,472 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,472 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,472 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,482 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,482 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,482 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,482 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,482 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,482 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,482 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,483 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,483 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,483 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,492 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,492 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,492 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,492 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,492 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,492 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,493 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,493 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,493 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,493 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,503 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,503 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,503 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,503 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,503 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,503 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,503 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,503 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,503 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,504 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,514 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,514 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,514 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,514 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,514 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,514 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,514 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,514 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,514 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,515 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,524 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,524 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,524 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,524 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,524 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,524 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,524 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,525 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,525 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,525 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,534 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,534 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,534 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,534 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,534 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,534 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,534 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,534 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,534 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,535 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,545 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,545 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,546 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,546 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,546 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,546 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,546 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,546 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.30', 'context': {'usage': 0.85}}
+2025-06-01 20:04:52,547 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'hvac', 'duration_seconds': 90, 'avg_usage': 0.85}
+2025-06-01 20:04:52,547 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'hvac', 'duration_seconds': 91, 'avg_usage': 0.85}
+2025-06-01 20:04:52,555 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'hvac', 'duration_seconds': 91, 'avg_usage': 0.85}
+2025-06-01 20:04:52,555 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'hvac', 'duration_seconds': 91, 'avg_usage': 0.85}
+2025-06-01 20:04:52,556 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'hvac', 'duration_seconds': 91, 'avg_usage': 0.85}
+2025-06-01 20:04:52,556 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'hvac', 'duration_seconds': 91, 'avg_usage': 0.85}
+2025-06-01 20:04:52,956 DEBUG [NORMAL] {'event': '10000_messages_received', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.40', 'context': {}}
+2025-06-01 20:04:53,358 WARNING [SECURITY ALERT] MESSAGE_FLOOD: {'events_in_window': 2, 'estimated_messages': 20000}
+2025-06-01 20:04:53,358 WARNING [SECURITY ALERT] MESSAGE_FLOOD: {'events_in_window': 3, 'estimated_messages': 30000}
+2025-06-01 20:04:53,760 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'alice', 'role': 'USER', 'device': '192.168.0.10', 'context': {'success': True}}
+2025-06-01 20:04:53,760 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'success': False}}
+2025-06-01 20:04:53,760 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'success': False}}
+2025-06-01 20:04:53,761 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'success': False}}
+2025-06-01 20:04:53,761 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'success': False}}
+2025-06-01 20:04:53,762 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'eve', 'role': 'USER', 'device': '192.168.0.20', 'context': {'success': False}}
+2025-06-01 20:04:53,762 WARNING [SECURITY ALERT] BRUTE_FORCE_LOGIN: {'user': 'eve', 'attempts': 6}
+2025-06-01 20:04:53,762 DEBUG [NORMAL] {'event': 'control_command', 'user': 'admin', 'role': 'ADMIN', 'device': '192.168.0.30', 'context': {'command': 'light_on'}}
+2025-06-01 20:04:55,168 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,168 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,169 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,169 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,169 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,170 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,170 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,170 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,171 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,171 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,171 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,172 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,172 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,172 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,173 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,173 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,173 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,174 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,174 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,174 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,176 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,176 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,177 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,177 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,178 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,178 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,180 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,180 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,181 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,181 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,182 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,182 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,182 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,183 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,183 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,184 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,184 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,185 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,185 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,186 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,187 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,187 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,188 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,188 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,189 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,189 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,190 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,190 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,190 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,191 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,191 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,192 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,192 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,193 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,193 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,195 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,195 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,195 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,196 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,196 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,197 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,197 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,198 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,198 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,198 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,199 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,199 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,200 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,200 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,200 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,200 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,201 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,201 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,202 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,203 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,203 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,204 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,204 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,205 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,205 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,205 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,206 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,206 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,207 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,207 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,207 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,210 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,210 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,211 DEBUG [NORMAL] {'event': 'system_resource_usage', 'user': 'user10', 'role': 'USER', 'device': '192.168.0.10', 'context': {'usage': 0.85}}
+2025-06-01 20:04:55,211 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'thermostat', 'duration_seconds': 90, 'avg_usage': 0.85}
+2025-06-01 20:04:55,213 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'thermostat', 'duration_seconds': 91, 'avg_usage': 0.85}
+2025-06-01 20:04:55,214 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'thermostat', 'duration_seconds': 91, 'avg_usage': 0.85}
+2025-06-01 20:04:55,216 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'thermostat', 'duration_seconds': 91, 'avg_usage': 0.85}
+2025-06-01 20:04:55,216 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'thermostat', 'duration_seconds': 91, 'avg_usage': 0.85}
+2025-06-01 20:04:55,217 WARNING [SECURITY ALERT] RESOURCE_EXHAUSTION: {'device': 'thermostat', 'duration_seconds': 91, 'avg_usage': 0.85}
+2025-06-01 20:04:57,519 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'attacker', 'role': 'USER', 'device': '192.168.0.40', 'context': {'success': False}}
+2025-06-01 20:04:57,519 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'attacker', 'role': 'USER', 'device': '192.168.0.40', 'context': {'success': False}}
+2025-06-01 20:04:57,519 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'attacker', 'role': 'USER', 'device': '192.168.0.40', 'context': {'success': False}}
+2025-06-01 20:04:57,519 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'attacker', 'role': 'USER', 'device': '192.168.0.40', 'context': {'success': False}}
+2025-06-01 20:04:57,519 DEBUG [NORMAL] {'event': 'login_attempt', 'user': 'attacker', 'role': 'USER', 'device': '192.168.0.40', 'context': {'success': False}}
+2025-06-01 20:04:57,520 WARNING [SECURITY ALERT] BRUTE_FORCE_LOGIN: {'user': 'attacker', 'attempts': 6}
+2025-06-01 20:04:57,520 WARNING [SECURITY ALERT] BRUTE_FORCE_LOGIN: {'user': 'attacker', 'attempts': 7}
+2025-06-01 20:04:57,521 WARNING [SECURITY ALERT] BRUTE_FORCE_LOGIN: {'user': 'attacker', 'attempts': 8}
