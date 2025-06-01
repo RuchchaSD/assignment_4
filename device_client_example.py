@@ -23,7 +23,7 @@ from typing import Dict, Any
 class IoTDevice:
     """Example IoT device that reports security events."""
     
-    def __init__(self, device_ip: str, device_type: str, api_url: str = "http://localhost:8000"):
+    def __init__(self, device_ip: str, device_type: str, api_url: str = "http://localhost:8000", api_key: str = "secret-api-key-12345"):
         """
         Initialize the IoT device.
         
@@ -31,11 +31,13 @@ class IoTDevice:
             device_ip: This device's IP address
             device_type: Type of device (thermostat, camera, etc.)
             api_url: URL of the attack detection API server
+            api_key: API key for authentication (device registration requires auth)
         """
         self.device_ip = device_ip
         self.device_type = device_type
         self.api_url = api_url
         self.session = requests.Session()
+        self.auth_headers = {"X-API-Key": api_key}
         
         # Register this device with the system
         self.register_device()
@@ -49,6 +51,7 @@ class IoTDevice:
                     "device_ip": self.device_ip,
                     "device_type": self.device_type
                 },
+                headers=self.auth_headers,  # Authentication required
                 timeout=5
             )
             response.raise_for_status()

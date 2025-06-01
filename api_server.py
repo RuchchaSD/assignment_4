@@ -9,14 +9,18 @@ and check for suspicious activity.
 Key Features:
 - Event submission endpoint for devices
 - Suspicious activity status checking
-- Configuration management (users, devices, commands)
+- Configuration management (users, devices, commands) - PROTECTED
 - Health monitoring and statistics
 - LAN-only access with proper CORS handling
+- API key authentication for sensitive operations
 
 Usage:
     python api_server.py
     
 Then devices can POST events to: http://192.168.x.x:8000/events
+
+Authentication:
+    Protected endpoints require API key in header: X-API-Key: secret-api-key-12345
 """
 
 import asyncio
@@ -24,11 +28,33 @@ import uvicorn
 from datetime import datetime
 from typing import Dict, List, Optional
 from pydantic import BaseModel, Field
-from fastapi import FastAPI, HTTPException, BackgroundTasks
+from fastapi import FastAPI, HTTPException, BackgroundTasks, Depends, Header
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from fastapi.security import APIKeyHeader
 
 from src.detector import detector, Event
+
+
+# =============================================================================
+# API Key Configuration
+# =============================================================================
+
+# Static API key for authentication (in production, use environment variable)
+API_KEY = "secret-api-key-12345"
+API_KEY_NAME = "X-API-Key"
+
+# Create API key header dependency
+api_key_header = APIKeyHeader(name=API_KEY_NAME, auto_error=False)
+
+def get_api_key(api_key: str = Depends(api_key_header)):
+    """Dependency to validate API key for protected endpoints."""
+    if api_key != API_KEY:
+        raise HTTPException(
+            status_code=401, 
+            detail="Invalid API key. Use header: X-API-Key: secret-api-key-12345"
+        )
+    return api_key
 
 
 # =============================================================================
@@ -124,7 +150,9 @@ async def root():
         "version": "1.0.0",
         "status": "running",
         "docs": "/docs",
-        "health": "/health"
+        "health": "/health",
+        "authentication": "Protected endpoints require X-API-Key header",
+        "api_key": "secret-api-key-12345"
     }
 
 @app.get("/health", response_model=HealthResponse)
@@ -203,15 +231,15 @@ async def get_status():
     )
 
 @app.post("/status/clear")
-async def clear_suspicious_flag():
-    """Clear the suspicious activity flag."""
+async def clear_suspicious_flag(api_key: str = Depends(get_api_key)):
+    """Clear the suspicious activity flag. Requires API key authentication."""
     server_stats["api_calls"] += 1
     detector.suspicious_flag.clear()
     return {"status": "cleared", "message": "Suspicious activity flag cleared"}
 
 @app.post("/config/users")
-async def add_user(user_request: UserRequest):
-    """Add or update a user in the system."""
+async def add_user(user_request: UserRequest, api_key: str = Depends(get_api_key)):
+    """Add or update a user in the system. Requires API key authentication."""
     server_stats["api_calls"] += 1
     
     detector.update_user(user_request.user_id, user_request.max_privilege)
@@ -222,8 +250,8 @@ async def add_user(user_request: UserRequest):
     }
 
 @app.post("/config/devices")
-async def add_device(device_request: DeviceRequest):
-    """Register a device in the system."""
+async def add_device(device_request: DeviceRequest, api_key: str = Depends(get_api_key)):
+    """Register a device in the system. Requires API key authentication."""
     server_stats["api_calls"] += 1
     
     detector.update_device(device_request.device_ip, device_request.device_type)
@@ -234,8 +262,8 @@ async def add_device(device_request: DeviceRequest):
     }
 
 @app.post("/config/commands")
-async def update_commands(commands_request: CommandsRequest):
-    """Update the list of dangerous commands to monitor."""
+async def update_commands(commands_request: CommandsRequest, api_key: str = Depends(get_api_key)):
+    """Update the list of dangerous commands to monitor. Requires API key authentication."""
     server_stats["api_calls"] += 1
     
     detector.update_command_list(set(commands_request.commands))
@@ -246,8 +274,8 @@ async def update_commands(commands_request: CommandsRequest):
     }
 
 @app.get("/config/stats")
-async def get_configuration_stats():
-    """Get statistics about current system configuration."""
+async def get_configuration_stats(api_key: str = Depends(get_api_key)):
+    """Get statistics about current system configuration. Requires API key authentication."""
     server_stats["api_calls"] += 1
     
     stats = {
@@ -261,8 +289,8 @@ async def get_configuration_stats():
     return stats
 
 @app.get("/logs/attacks")
-async def get_attack_logs(limit: int = 50):
-    """Get recent attack detection logs."""
+async def get_attack_logs(limit: int = 50, api_key: str = Depends(get_api_key)):
+    """Get recent attack detection logs. Requires API key authentication."""
     server_stats["api_calls"] += 1
     
     try:
@@ -284,8 +312,8 @@ async def get_attack_logs(limit: int = 50):
         raise HTTPException(status_code=500, detail=f"Error reading logs: {str(e)}")
 
 @app.delete("/system/shutdown")
-async def shutdown_system():
-    """Gracefully shutdown the detection system."""
+async def shutdown_system(api_key: str = Depends(get_api_key)):
+    """Gracefully shutdown the detection system. Requires API key authentication."""
     server_stats["api_calls"] += 1
     
     success = detector.shutdown(timeout=10.0)

@@ -28,6 +28,10 @@ class APITestClient:
         self.base_url = base_url
         self.session = requests.Session()
         self.test_results = []
+        
+        # API key for protected endpoints
+        self.api_key = "secret-api-key-12345"
+        self.auth_headers = {"X-API-Key": self.api_key}
     
     def post_event(self, event_name: str, user_id: str, user_role: str, 
                    source_id: str, context: Dict[str, Any] = None) -> Dict:
@@ -55,34 +59,34 @@ class APITestClient:
     
     def clear_suspicious_flag(self) -> Dict:
         """Clear the suspicious activity flag."""
-        response = self.session.post(f"{self.base_url}/status/clear")
+        response = self.session.post(f"{self.base_url}/status/clear", headers=self.auth_headers)
         response.raise_for_status()
         return response.json()
     
     def configure_user(self, user_id: str, max_privilege: str) -> Dict:
         """Configure a user in the system."""
         user_data = {"user_id": user_id, "max_privilege": max_privilege}
-        response = self.session.post(f"{self.base_url}/config/users", json=user_data)
+        response = self.session.post(f"{self.base_url}/config/users", json=user_data, headers=self.auth_headers)
         response.raise_for_status()
         return response.json()
     
     def configure_device(self, device_ip: str, device_type: str) -> Dict:
         """Register a device in the system."""
         device_data = {"device_ip": device_ip, "device_type": device_type}
-        response = self.session.post(f"{self.base_url}/config/devices", json=device_data)
+        response = self.session.post(f"{self.base_url}/config/devices", json=device_data, headers=self.auth_headers)
         response.raise_for_status()
         return response.json()
     
     def configure_commands(self, commands: list) -> Dict:
         """Update dangerous commands list."""
         commands_data = {"commands": commands}
-        response = self.session.post(f"{self.base_url}/config/commands", json=commands_data)
+        response = self.session.post(f"{self.base_url}/config/commands", json=commands_data, headers=self.auth_headers)
         response.raise_for_status()
         return response.json()
     
     def get_attack_logs(self, limit: int = 50) -> Dict:
         """Get recent attack logs."""
-        response = self.session.get(f"{self.base_url}/logs/attacks", params={"limit": limit})
+        response = self.session.get(f"{self.base_url}/logs/attacks", params={"limit": limit}, headers=self.auth_headers)
         response.raise_for_status()
         return response.json()
     
@@ -304,7 +308,7 @@ def run_api_tests():
     
     # Test configuration stats
     try:
-        stats = client.session.get(f"{client.base_url}/config/stats").json()
+        stats = client.session.get(f"{client.base_url}/config/stats", headers=client.auth_headers).json()
         print(f"✅ Configuration stats: {stats['users_configured']} users, {stats['devices_registered']} devices")
     except Exception as e:
         print(f"❌ Configuration stats failed: {e}")

@@ -76,6 +76,22 @@ This comprehensive test validates all detection rules with 20 test cases coverin
 - MQTT message flooding
 - Parallel threading scenarios
 
+### Option 1: Direct Library Usage
+```bash
+python example_usage.py  # Run all 21 tests
+```
+
+### Option 2: REST API Usage
+```bash
+# Terminal 1: Start API server
+python api_server.py
+
+# Terminal 2: Run API tests  
+python test_api.py       # 19 tests via HTTP
+python device_client_example.py  # IoT device simulation
+python api_auth_demo.py  # Authentication demonstration
+```
+
 ## 🛡️ Security Detection Rules
 
 ### 1. Network Validation
@@ -220,3 +236,58 @@ attack-detector/
 - **Alerting**: Hook into `suspicious_flag` for real-time notifications
 
 **Security Notice**: This system is designed for educational purposes as part of EN4720 Security in Cyber-Physical Systems (Assignment 4). It provides no security guarantees and should not be used in production environments without extensive testing and hardening.
+
+## 🔐 API Authentication
+
+The REST API uses **static API key authentication** to protect sensitive endpoints from unauthorized access.
+
+### API Key: `secret-api-key-12345`
+
+### Protected Endpoints (Require Authentication)
+All configuration, logging, and administrative endpoints require the API key:
+
+```
+X-API-Key: secret-api-key-12345
+```
+
+- **POST** `/status/clear` - Clear suspicious activity flag
+- **POST** `/config/users` - Add/update users
+- **POST** `/config/devices` - Register devices  
+- **POST** `/config/commands` - Update dangerous commands list
+- **GET** `/config/stats` - Get system configuration stats
+- **GET** `/logs/attacks` - Retrieve attack detection logs
+- **DELETE** `/system/shutdown` - Shutdown the system
+
+### Public Endpoints (No Authentication)
+Core operational endpoints remain publicly accessible for IoT devices:
+
+- **GET** `/` - API information
+- **GET** `/health` - Health check
+- **GET** `/status` - Get suspicious activity status
+- **POST** `/events` - Submit security events (IoT devices)
+
+### Usage Examples
+
+**❌ Without API Key (Rejected):**
+```bash
+curl http://localhost:8000/config/stats
+# Response: 401 Unauthorized
+```
+
+**✅ With API Key (Accepted):**
+```bash
+curl -H "X-API-Key: secret-api-key-12345" http://localhost:8000/config/stats
+# Response: Configuration data
+```
+
+**✅ Python Example:**
+```python
+headers = {"X-API-Key": "secret-api-key-12345"}
+response = requests.get("http://localhost:8000/config/stats", headers=headers)
+```
+
+### Security Benefits
+- **Administrative Protection**: Configuration changes require authentication
+- **Log Access Control**: Attack logs are protected from unauthorized viewing
+- **System Security**: Critical operations like shutdown are authenticated
+- **IoT Device Access**: Event submission remains frictionless for devices
