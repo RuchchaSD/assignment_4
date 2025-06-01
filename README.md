@@ -62,6 +62,7 @@ python device_client_example.py
 
 # ➍ run tests
 python tests/test_api.py                                             # should report 48 tests = 22 + 26
+python tests/test_example_usage.py
 ```
 
 ---
