@@ -15,7 +15,7 @@ Key Features:
 - API key authentication for sensitive operations
 
 Usage:
-    python api_server.py
+    python -m src.api.server
     
 Then devices can POST events to: http://192.168.x.x:8000/events
 
@@ -33,7 +33,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.security import APIKeyHeader
 
-from src.detector import detector, Event
+from ..detector import detector, Event
 
 
 # =============================================================================
@@ -328,7 +328,8 @@ async def shutdown_system(api_key: str = Depends(get_api_key)):
 # Server Startup
 # =============================================================================
 
-if __name__ == "__main__":
+def main():
+    """Main function to start the API server."""
     print("🚀 Starting Attack Detection API Server...")
     print("📡 Accessible to LAN devices on port 8000")
     print("📚 API Documentation: http://localhost:8000/docs")
@@ -341,4 +342,7 @@ if __name__ == "__main__":
         port=8000,
         log_level="info",
         access_log=True
-    ) 
+    )
+
+if __name__ == "__main__":
+    main() 

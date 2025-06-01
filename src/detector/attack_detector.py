@@ -73,7 +73,7 @@ class AttackDetector:
         
         # Global suspicious activity flag
         self.suspicious_flag = threading.Event()
-        
+
         # Per-device processing infrastructure
         self._device_queues: Dict[str, Queue] = {}
         self._device_threads: Dict[str, threading.Thread] = {}

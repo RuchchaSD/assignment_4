@@ -6,7 +6,7 @@ This script demonstrates how smart home devices can report security
 events to the attack detection system via HTTP API calls.
 
 Usage:
-    python device_client_example.py
+    python examples/device_client_example.py
     
 Requirements:
     - API server running on the network
@@ -212,9 +212,41 @@ def main():
             print("⚠️  API server responded but may have issues")
     except:
         print("❌ API server not available on localhost:8000")
-        print("   Please start the server with: python api_server.py")
+        print("   Please start the server with: python -m src.api.server")
         print("   Or update the API URL in this script for your network")
         return
+    
+    # Configure users in the system before devices start reporting events
+    print("⚙️  Configuring users in the system...")
+    api_key = "secret-api-key-12345"
+    auth_headers = {"X-API-Key": api_key}
+    
+    users_to_configure = [
+        ("alice", "USER"),
+        ("system", "USER"), 
+        ("attacker", "USER"),
+        ("unknown_user", "USER"),  # For brute force simulation
+        ("admin", "ADMIN")
+    ]
+    
+    try:
+        for user_id, privilege in users_to_configure:
+            user_data = {"user_id": user_id, "max_privilege": privilege}
+            response = requests.post(
+                "http://localhost:8000/config/users",
+                json=user_data,
+                headers=auth_headers,
+                timeout=5
+            )
+            if response.status_code == 200:
+                print(f"   ✅ User '{user_id}' configured with {privilege} privilege")
+            else:
+                print(f"   ⚠️  Warning: Failed to configure user '{user_id}'")
+    except Exception as e:
+        print(f"   ⚠️  Warning: User configuration failed: {e}")
+        print("   Continuing with device simulation...")
+    
+    print()
     
     # Run device simulations
     try:

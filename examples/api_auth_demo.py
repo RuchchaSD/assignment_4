@@ -5,6 +5,9 @@ API Authentication Demonstration
 This script demonstrates the API key authentication system
 for the Attack Detection API by testing both protected and
 unprotected endpoints.
+
+Usage:
+    python examples/api_auth_demo.py
 """
 
 import requests
@@ -112,6 +115,39 @@ def test_api_authentication():
     print("• Protected endpoints require X-API-Key header")
     print("• Invalid/missing API keys are rejected with 401")
     print("• Valid API key grants access to all protected endpoints")
+    
+    # Additional demonstration: Event submission after user configuration
+    print("\n6. Testing EVENT SUBMISSION after user configuration:")
+    try:
+        # First configure a test user (requires API key)
+        headers = {"X-API-Key": api_key}
+        user_data = {"user_id": "demo_user", "max_privilege": "USER"}
+        response = requests.post(f"{base_url}/config/users", json=user_data, headers=headers)
+        
+        if response.status_code == 200:
+            print("✅ SUCCESS: Test user 'demo_user' configured")
+            
+            # Now submit an event for this user (no API key needed for event submission)
+            event_data = {
+                "event_name": "login_attempt",
+                "user_role": "USER",
+                "user_id": "demo_user",
+                "source_id": "192.168.1.200",
+                "context": {"success": True, "demo": True}
+            }
+            
+            event_response = requests.post(f"{base_url}/events", json=event_data)
+            if event_response.status_code == 200:
+                print("✅ SUCCESS: Event submitted successfully for configured user")
+                print("   This demonstrates the workflow: configure users (auth required) → submit events (no auth)")
+            else:
+                print(f"❌ FAILED: Event submission failed ({event_response.status_code})")
+        else:
+            print(f"❌ FAILED: User configuration failed ({response.status_code})")
+            
+    except Exception as e:
+        print(f"❌ ERROR: {e}")
+    
     print("\n🔐 Protected endpoints:")
     print("  - /status/clear")
     print("  - /config/* (users, devices, commands, stats)")
@@ -122,6 +158,10 @@ def test_api_authentication():
     print("  - /health")
     print("  - /status (GET)")
     print("  - /events (POST)")
+    print("\n💡 Best Practice Workflow:")
+    print("  1. Configure users/devices using protected endpoints (requires API key)")
+    print("  2. IoT devices submit events using public /events endpoint (no API key)")
+    print("  3. Monitor system status and retrieve logs using protected endpoints")
 
 
 if __name__ == "__main__":
