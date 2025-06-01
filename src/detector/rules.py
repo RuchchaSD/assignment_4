@@ -38,7 +38,7 @@ class DetectionConfig:
     RESOURCE_WINDOW = timedelta(seconds=90)
     
     # MQTT flood detection
-    MQTT_FLOOD_LIMIT = 10_000
+    MQTT_FLOOD_LIMIT = 20_000  # 2 events × 10,000 messages each
     MQTT_FLOOD_WINDOW = timedelta(seconds=100)
 
 @dataclass
@@ -293,10 +293,10 @@ class AttackRules:
         if event.event_name == "10000_messages_received":
             self.mqtt_events.append(event.timestamp)
             self._clean_sliding_window(self.mqtt_events, event.timestamp,
-                                     DetectionConfig.MQTT_FLOOD_WINDOW)
+                                        DetectionConfig.MQTT_FLOOD_WINDOW)
             
-            # Each event represents 10k messages, so even 1 is significant
-            if len(self.mqtt_events) >= 1:
+            # Need at least 2 events (20,000+ messages) within the window to be considered a flood
+            if len(self.mqtt_events) >= 2:
                 self.suspicious_flag.set()
                 return Verdict(True, "MESSAGE_FLOOD", {
                     "events_in_window": len(self.mqtt_events),

@@ -184,8 +184,14 @@ expect_with_sync("System resource abuse", True)
 # ---------------------------------------------------------------------
 # 8  MQTT flood tests ------------------------------------------------
 print("\n--- MQTT FLOOD TESTS ---")
+# Test single MQTT burst - should NOT trigger (only 10,000 messages)
 send("10000_messages_received", "alice", "USER", "192.168.0.40", 1000, {})
-expect_with_sync("MQTT message flood", True)
+expect_with_sync("Single MQTT burst (10k msgs)", False)
+
+# Test MQTT flood - should trigger (20,000+ messages in 100s window)
+send("10000_messages_received", "alice", "USER", "192.168.0.40", 1010, {})
+send("10000_messages_received", "alice", "USER", "192.168.0.40", 1020, {})
+expect_with_sync("MQTT message flood (20k msgs)", True)
 
 # ---------------------------------------------------------------------
 # 9  PARALLEL THREADING TESTS ---------------------------------------
